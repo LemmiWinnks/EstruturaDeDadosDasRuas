@@ -8,6 +8,9 @@ class Node:
 
     def getNext(self):
         return self.next
+    
+    def setNext(self, newNext):
+        self.next = newNext
 
 class LinkedList:
     def __init__(self):
@@ -27,6 +30,28 @@ class LinkedList:
 
             self.quantity += 1
 
+    def removeNo(self, nodeForRemove):
+        node_X = Node(None)
+        node = self.head
+        counter = 0
+        while counter < self.quantity:
+            counter += 1
+            if node == self.head:
+                if  node.getValue() == nodeForRemove:
+                    self.head = self.head.getNext()
+                    break
+            else:
+                if node.getValue() == nodeForRemove:
+                    node_X = node
+                    counter = 0
+                    node = self.head
+
+                if node.getNext() == node_X:
+                    node.setNext(node_X.getNext()) 
+                    break
+
+            node = node.getNext()
+
     def previousNode(self):
         node = self.head
         counter = 0
@@ -42,12 +67,13 @@ class LinkedList:
         node = self.head
         counter = 0
         while counter < self.quantity:
-            if node == self.head:
+            if node.getNext() == None:
                 print(node.getValue())
-                node = node.getNext()
+                break
             else:
                 print(node.getValue())
                 node = node.getNext()
+            
 
             counter += 1
 
@@ -55,8 +81,15 @@ class LinkedList:
 
 
 lista = LinkedList()
+
 lista.insert(10)
 lista.insert(40)
 lista.insert(50)
+
+lista.displayList()
+
+print("-----------------")
+
+lista.removeNo(40)
 
 lista.displayList()
