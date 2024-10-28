@@ -1,0 +1,60 @@
+1) Array
+
+Array é um conjunto de dados fixo(imutável), e de mesmo tipo. Diferente das listas.
+
+Em listas consigo adicionar "N" elementos de "N" tipos.
+
+lista = ["queijo", 1, "mortadela", 20, 30]
+
+Em arrays, trabalhamos com elementos fixos:
+
+array = [1, 2, 3, 4, 5]
+
+Arrays são alocados de forma dinâmica na memória, possui um acesso mais rápido(parte da memória)
+
+2)LinkedList
+
+# Inserindo elementos
+
+Sempre que eu quero inserir um elemento na lista, eu preciso pegar o Nó que aponta para o vazio(o último Nó), e agora apontar para o novo Nó adicionado.
+
+- Pega o último nó até então
+- Aponta esse último nó para o recém adicionado
+
+#Removendo um Node
+
+Para remover um nó eu preciso do próprio nó. Preciso caçar ele na memória e apontar para ele.
+
+Para remover um objeto, preciso pegar o seu anterior e apontar para o que ele aponta: 
+
+- remover objetos da lista -> [a, b] - [b, c] - [c, e]
+- Deletando [b] = lista fica [a, c] - [c, e]
+- Quem apontava para b, agora aponta para aonde b aponta
+- Para remover x, se x aponta para y, quem aponta para x deve agora apontar para y
+
+# Se estiver removendo o node Cabeça
+
+Se o node cabeça for removido, significa que o próximo que ele aponta passa a ser o cabeça
+
+
+3)FIFO
+
+Geralmente as linguagens possuem algum recurso diferencial para realizar esse tipo de manejo
+em filas.
+
+Como em python -> blibioteca Queue
+
+Mas resumindo, filas são nada mais que uma lista, aonde o primeiro elemento a entrar sempre
+vai ser o último a sair.
+
+No caso de uma lista, lista [0, 1, 2, 3]
+
+Aquele que participa do indice 0, sempre vai ser o primeiro.
+
+Listas do tipo fifo precisam ser flexíveis, pois vou precisar remover elementos.
+
+4) LIFO
+
+Lifo é contrário de fifo, onde em uma lista o último elemento a entrar é o primeiro a sair.
+
+Então basta pegar o último elemento da lista e remover :D

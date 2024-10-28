@@ -77,9 +77,6 @@ class LinkedList:
 
             counter += 1
 
-
-
-
 lista = LinkedList()
 
 lista.insert(10)
